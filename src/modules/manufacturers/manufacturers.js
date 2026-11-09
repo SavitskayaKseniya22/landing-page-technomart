@@ -1,52 +1,81 @@
-import './manufacturers.scss';
+import image0 from './assets/bosch.png';
+import image1 from './assets/Makita.png';
+import image2 from './assets/DeWALT.png';
+import image3 from './assets/Интерскол.png';
+import image4 from './assets/Hitachi.png';
+import image5 from './assets/LG.png';
+import image6 from './assets/AEG.png';
+import image7 from './assets/Metabo.png';
 
-import chapterTitle from '../../lib/chapter-title/chapter-title';
-
-import imgBosch from './assets/bosch.png';
-import imgMakita from './assets/Makita.png';
-import imgDeWALT from './assets/DeWALT.png';
-import imgInter from './assets/Интерскол.png';
-import imgHitachi from './assets/Hitachi.png';
-import imgLG from './assets/LG.png';
-import imgAEG from './assets/AEG.png';
-import imgMetabo from './assets/Metabo.png';
-
-const manufacturersData = [
-  { title: 'bosch', image: imgBosch, link: '/' },
-  { title: 'Makita', image: imgMakita, link: '/' },
-  { title: 'DeWALT', image: imgDeWALT, link: '/' },
-  { title: 'Интерскол', image: imgInter, link: '/' },
-  { title: 'Hitachi', image: imgHitachi, link: '/' },
-  { title: 'LG', image: imgLG, link: '/' },
-  { title: 'AEG', image: imgAEG, link: '/' },
-  { title: 'Metabo', image: imgMetabo, link: '/' },
-];
-
-export default class Manufacturers extends HTMLDivElement {
-  constructor() {
-    super();
-    this.className = 'container';
+export default class Manufacturers extends HTMLElement {
+  connectedCallback() {
+    if (!this.childElementCount) this.render();
   }
 
   render() {
-    this.insertAdjacentHTML(
-      'afterbegin',
-      `
-      ${chapterTitle({ title: 'популярные проивзодители', link: '/' }).outerHTML}
+    this.innerHTML = `
+<section class="container" id="manufacturers">
+        <div class="chapter-title">
+          <h2>популярные производители</h2>
+          <a href="/" class="btn btn_red chapter-title__btn"
+            >Все популярные производители</a
+          >
+        </div>
         <ul class="manufacturers__list">
-        ${manufacturersData
-          .map((item) => {
-            return `<li>
-            <a href=${item.link} class="manufacturers__item"><img src=${item.image} alt=${item.title} /></a>
-          </li>`;
-          })
-          .join('')}
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image0}"
+                alt="bosch"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image1}"
+                alt="Makita"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image2}"
+                alt="DeWALT"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image3}"
+                alt="Интерскол"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image4}"
+                alt="Hitachi"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img src="${image5}" alt="LG"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img src="${image6}" alt="AEG"
+            /></a>
+          </li>
+          <li>
+            <a href="/" class="manufacturers__item"
+              ><img
+                src="${image7}"
+                alt="Metabo"
+            /></a>
+          </li>
         </ul>
-    `
-    );
-  }
-
-  connectedCallback() {
-    this.render();
+      </section>
+`;
   }
 }

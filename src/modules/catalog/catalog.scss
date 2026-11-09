@@ -216,7 +216,15 @@
   }
 
   input[name='catalog__slider'] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+
+    &:focus-visible ~ .control {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
 
     &:checked ~ .control {
       background-color: rgba(255, 255, 255, 0.9);

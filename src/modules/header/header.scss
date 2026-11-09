@@ -41,21 +41,6 @@
   order: 3;
 }
 
-#search-panel {
-  display: none;
-
-  @media (max-width: 800px) {
-    &:checked ~ .btn_search {
-      background-color: #31a2c5;
-      flex-shrink: 0;
-    }
-
-    &:not(:checked) ~ input[name='search'] {
-      display: none;
-    }
-  }
-}
-
 .btn_search {
   display: none;
 
@@ -68,6 +53,16 @@
     align-items: center;
     justify-content: center;
     height: 42px;
+
+    &[aria-expanded='true'] {
+      background-color: #31a2c5;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header__top:has(.btn_search[aria-expanded='false']) input[name='search'] {
+    display: none;
   }
 }
 

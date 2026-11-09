@@ -59,7 +59,15 @@
   }
 
   input[type='radio'] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+
+    &:focus-visible ~ label {
+      outline: 2px solid #ee3643;
+      outline-offset: -2px;
+    }
 
     &:checked ~ label {
       color: #32425c;
