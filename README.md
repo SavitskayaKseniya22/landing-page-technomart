@@ -23,7 +23,6 @@ Landing page for Technomart store
 
 ## How to use
 
-Requires Node.js 22.15 or newer.
 
 1. Clone the repo
 
@@ -47,4 +46,5 @@ npm start
 
 ### Screenshots:
 
-![изображение](https://raw.githubusercontent.com/SavitskayaKseniya22/projects-photos/main/photos/technomart/screenshots/technomart-1280px.png)
+<img width="2543" height="3167" alt="Screenshot 2026-11-09 at 21-26-56 Technomart" src="https://github.com/user-attachments/assets/9f004252-f42b-4839-a93a-497305946d5a" />
+
